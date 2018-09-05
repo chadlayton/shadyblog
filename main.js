@@ -3,9 +3,7 @@
 //---------------------------------------------------------------
 
 var preCodeAndCanvas = "\n\
-#ifdef GL_ES\n\
 precision mediump float;\n\
-#endif\n\
 \n\
 #define PI 3.14159265359\n\
 \n\
