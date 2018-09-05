@@ -169,7 +169,7 @@ function loadGlslElements() {
                 canvas_follow: true,
                 canvas_float: 'right',
                 frag_header: preCanvas,
-                tooltips: true,
+                tooltips: false,
             });
             editor.open(srcFile);
             glslEditors.push(editor);
@@ -189,7 +189,7 @@ function loadGlslElements() {
                 canvas_float: false,
                 frag_header: preFunction,
                 frag_footer: postFunction,
-                tooltips: true
+                tooltips: false
             }).open(srcFile));
         }
     }
