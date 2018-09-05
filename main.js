@@ -2,6 +2,32 @@
 // PARSING
 //---------------------------------------------------------------
 
+var preCodeAndCanvas = "\n\
+#ifdef GL_ES\n\
+precision mediump float;\n\
+#endif\n\
+\n\
+#define PI 3.14159265359\n\
+\n\
+uniform vec2 u_resolution;\n\
+uniform vec2 u_mouse;\n\
+uniform float u_time;\n\
+\n\
+float lineJitter = 0.5;\n\
+float lineWidth = 7.0;\n\
+float gridWidth = 1.7;\n\
+float scale = 0.0013;\n\
+float zoom = 2.5;\n\
+vec2 offset = vec2(0.5);\n\
+\n\
+float rand (in float _x) {\n\
+    return fract(sin(_x)*1e4);\n\
+}\n\
+\n\
+float rand (in vec2 co) {\n\
+    return fract(sin(dot(co.xy,vec2(12.9898,78.233)))*43758.5453);\n\
+}\n\";
+
 //  Graph plotter function take from
 //  From http://blog.hvidtfeldts.net/index.php/2011/07/plotting-high-frequency-functions-using-a-gpu/
 var preFunction = "\n\
@@ -141,6 +167,7 @@ function loadGlslElements() {
                 canvas_size: 250,
                 canvas_follow: true,
                 canvas_float: 'right',
+		frag_header: preCodeAndCanvas,
                 tooltips: true,
                 exportIcon: true
             });
