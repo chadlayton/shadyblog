@@ -2,7 +2,7 @@
 // PARSING
 //---------------------------------------------------------------
 
-var preCodeAndCanvas = "\n\
+var preCanvas = "\n\
 precision mediump float;\n\
 \n\
 #define PI 3.14159265359\n\
@@ -163,11 +163,11 @@ function loadGlslElements() {
             var srcFile = ccList[i].getAttribute("data");
             var editor = new GlslEditor(ccList[i], {
                 canvas_size: 250,
+                lineNumbers: false,
                 canvas_follow: true,
                 canvas_float: 'right',
-		frag_header: preCodeAndCanvas,
+                frag_header: preCanvas,
                 tooltips: true,
-                exportIcon: true
             });
             editor.open(srcFile);
             glslEditors.push(editor);
