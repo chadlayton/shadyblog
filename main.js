@@ -26,7 +26,7 @@ float rand (in float _x) {\n\
 \n\
 float rand (in vec2 co) {\n\
     return fract(sin(dot(co.xy,vec2(12.9898,78.233)))*43758.5453);\n\
-}\n\";
+}\n";
 
 //  Graph plotter function take from
 //  From http://blog.hvidtfeldts.net/index.php/2011/07/plotting-high-frequency-functions-using-a-gpu/
