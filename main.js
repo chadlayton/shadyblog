@@ -26,6 +26,9 @@ float rand (in float _x) {\n\
 \n\
 float rand (in vec2 co) {\n\
     return fract(sin(dot(co.xy,vec2(12.9898,78.233)))*43758.5453);\n\
+}\n
+vec2 rand2(in vec2 p) {\n
+    return fract(sin(vec2(dot(p, vec2(127.1,311.7)), dot(p, vec2(269.5, 183.3)))) * 43758.5453);\n
 }\n";
 
 //  Graph plotter function take from
