@@ -36,7 +36,7 @@ float noise (in float _x) {\n\
     float i = floor(_x);\n\
     float f = fract(_x);\n\
     float u = f * f * (3.0 - 2.0 * f);\n\
-    return mix(rand(i), rand(i + 1.0), u);\n\
+    return mix(rand(i), rand(i + 1.0), u) * 2.0 - 1.0;\n\
 }\n\
 \n\
 float noise (in vec2 _st) {\n\
@@ -48,9 +48,9 @@ float noise (in vec2 _st) {\n\
     float c = rand(i + vec2(0.0, 1.0));\n\
     float d = rand(i + vec2(1.0, 1.0));\n\
     vec2 u = f * f * (3.0 - 2.0 * f);\n\
-    return mix(a, b, u.x) + \n\
+    return (mix(a, b, u.x) + \n\
             (c - a)* u.y * (1.0 - u.x) + \n\
-            (d - b) * u.x * u.y;\n\
+            (d - b) * u.x * u.y) * 2.0 - 1.0;\n\
 }\n";
 
 //  Graph plotter function take from
@@ -85,7 +85,7 @@ float noise (in float _x) {\n\
     float i = floor(_x);\n\
     float f = fract(_x);\n\
     float u = f * f * (3.0 - 2.0 * f);\n\
-    return mix(rand(i), rand(i + 1.0), u);\n\
+    return mix(rand(i), rand(i + 1.0), u) * 2.0 - 1.0;\n\
 }\n\
 \n\
 float noise (in vec2 _st) {\n\
@@ -97,9 +97,9 @@ float noise (in vec2 _st) {\n\
     float c = rand(i + vec2(0.0, 1.0));\n\
     float d = rand(i + vec2(1.0, 1.0));\n\
     vec2 u = f * f * (3.0 - 2.0 * f);\n\
-    return mix(a, b, u.x) + \n\
+    return (mix(a, b, u.x) + \n\
             (c - a)* u.y * (1.0 - u.x) + \n\
-            (d - b) * u.x * u.y;\n\
+            (d - b) * u.x * u.y) * 2.0 - 1.0;\n\
 }\n\
 \n\
 float function(in float x) {\n\
